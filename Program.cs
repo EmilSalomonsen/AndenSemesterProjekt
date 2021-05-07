@@ -17,6 +17,7 @@ namespace AndenSemesterProjekt
         }
 
         // hva så gitchamp
+        // Hvór er min CE
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
