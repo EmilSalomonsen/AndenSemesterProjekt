@@ -5,8 +5,7 @@ using System.Threading.Tasks;
 
 namespace AndenSemesterProjekt.Interfaces
 {
-    interface IAdminsRepository
+    interface IUserRepository
     {
-
     }
 }

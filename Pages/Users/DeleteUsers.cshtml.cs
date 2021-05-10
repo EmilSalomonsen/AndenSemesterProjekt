@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace AndenSemesterProjekt.Pages.Attendants
+namespace AndenSemesterProjekt.Pages.Users
 {
-    public class AttendantsModel : PageModel
+    public class DeleteUsersModel : PageModel
     {
         public void OnGet()
         {

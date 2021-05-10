@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace AndenSemesterProjekt.Pages.Drivers
 {
-    public class DriversModel : PageModel
+    public class EditDriversModel : PageModel
     {
         public void OnGet()
         {
