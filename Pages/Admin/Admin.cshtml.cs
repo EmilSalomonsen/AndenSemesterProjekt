@@ -7,10 +7,24 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace AndenSemesterProjekt.Pages.Admin
 {
-    public class AdminModel : PageModel
+    public class AdminModel
     {
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            return Page();
         }
+
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            catalog.Admin(Admin);
+
+            return RedirectToPage("GetAllOrders");
+        }
+
     }
 }
