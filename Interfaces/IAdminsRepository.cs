@@ -7,5 +7,6 @@ namespace AndenSemesterProjekt.Interfaces
 {
     interface IAdminsRepository
     {
+
     }
 }

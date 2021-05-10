@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace AndenSemesterProjekt.Pages.Drivers
+namespace AndenSemesterProjekt.Pages.Attendants
 {
-    public class DriversModel : PageModel
+    public class GetAllAttendantsModel : PageModel
     {
         public void OnGet()
         {
