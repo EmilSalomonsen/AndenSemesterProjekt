@@ -16,8 +16,6 @@ namespace AndenSemesterProjekt
             CreateHostBuilder(args).Build().Run();
         }
 
-        // hva så gitchamp
-        // Hallo
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
