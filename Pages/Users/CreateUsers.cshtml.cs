@@ -1,19 +1,18 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using AndenSemesterProjekt.Models.Users;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AndenSemesterProjekt.Pages.Users
 {
     public class CreateUsersModel : PageModel
     {
         [BindProperty]
+        public AndenSemesterProjekt.Users User { get; set; }
 
-        public AndenSemesterProjekt.Users User;
-        
         public IActionResult OnGet()
         {
             return Page();
@@ -21,7 +20,7 @@ namespace AndenSemesterProjekt.Pages.Users
 
         public IActionResult OnPost()
         {
-            // test
+            return Page();
         }
 
     }
