@@ -2,3 +2,40 @@
 @model AndenSemesterProjekt.Pages.Routes.CreateRoutesModel
 @{
 }
+
+<!--    Add picture through file       -->
+<form action="/action_page.php">
+    <input type="file" id="myFile" name="filename">
+    <input type="submit">
+</form>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Antal sæder tilgængelig i din bil:</h1>
+
+<form action="/action_page.php">
+    <label for="quantity">Antal sæder (Mellem 1 og 7):</label>
+    <input type="number" id="quantity" name="quantity" min="1" max="10000">
+    <input type="submit">
+</form>
+
+</body>
+</html>
+
+<!-- PHP UPLOAD
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+</form>
+
+</body>
+</html>
+-->
