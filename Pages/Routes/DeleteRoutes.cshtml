@@ -1,4 +1,66 @@
 ﻿@page
 @model AndenSemesterProjekt.Pages.Routes.DeleteRoutesModel
 @{
+    ViewData["title"] = "DeleteRoute";
 }
+
+<h1>Slet ruten</h1>
+<h3>Er du sikker på du vil slette denne rute</h3>
+<div>
+    <form method="post">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @html.DisplayNameFor(model => model.Routes.RouteID)
+            </dt>
+            <dd class="col-sm-10">
+                @html.DisplayFor(model => model.Routes.RouteID)
+            </dd>
+            <dt class="col-sm-2">
+                @html.DisplayNameFor(model => model.Routes.Chauffør)
+            </dt>
+            <dd class="col-sm-10">
+                @html.DisplayFor(model => model.Routes.Chauffør)
+            </dd>
+            <dt class="col-sm-2">
+                @html.DisplayNameFor(model => model.Routes.AntalSæder)
+            </dt>
+            <dd class="col-sm-10">
+                @html.DisplayFor(model => model.Routes.AmtalSæder)
+            </dd>
+            <dt class="col-sm-2">
+                @html.DisplayNameFor(model => model.Routes.Start_Adresse)
+            </dt>
+            <dd class="col-sm-10">
+                @html.DisplayFor(model => model.Routes.Start_Adresse)
+            </dd>
+            <dt class="col-sm-2">
+                @html.DisplayNameFor(model => model.Routes.Slut_Adresse)
+            </dt>
+            <dd class="col-sm-10">
+                @html.DisplayFor(model => model.Routes.Slut_Adresse)
+            </dd>
+            <dt class="col-sm-2">
+                @html.DisplayNameFor(model => model.Routes.Start_tid)
+            </dt>
+            <dd class="col-sm-10">
+                @html.DisplayFor(model => model.Routes.Start_tid)
+            </dd>
+            <dt class="col-sm-2">
+                @html.DisplayNameFor(model => model.Routes.Ankomst_tid)
+            </dt>
+            <dd class="col-sm-10">
+                @html.DisplayFor(model => model.Routes.Ankomst_tid)
+            </dd>
+            <dt class="col-sm-2">
+                @html.DisplayNameFor(model => model.Routes.OpsamlingsPunkter)
+            </dt>
+            <dd class="col-sm-10">
+                @html.DisplayFor(model => model.Routes.OpsamlingsPunkter)
+            </dd>
+        </dl>
+        <input type="submit" valute="Delete" class="btn btn-dager"/>
+    </form>
+    <div>
+        <a asp-page="Routes">Tilbage til Router</a>
+    </div>
+</div>
