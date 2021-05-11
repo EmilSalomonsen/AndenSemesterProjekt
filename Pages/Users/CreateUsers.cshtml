@@ -1,4 +1,23 @@
 ﻿@page
 @model AndenSemesterProjekt.Pages.Users.CreateUsersModel
 @{
+    ViewData["Title"] = "OpretUser";
 }
+<form mothod = "post">
+    <h3> Indsæt informationer</h3>
+
+    <div class="form-group">
+    <label>Username: </label><input asp-for="@Model.Users.username" class="form-control" />
+    <span asp-validation-for="Users.username" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+    <label>password:</label><input asp-for="@Model.Users.password" class="form-control" />
+    <span asp-validation-for="Users.password" class="text-danger"></span>
+    </div>
+
+    <div class="text-center">
+    <input class="btn btn-primary" type="submit" value="Opret Bruger" />
+    </div>
+
+</form>
