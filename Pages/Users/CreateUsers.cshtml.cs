@@ -1,17 +1,20 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+using AndenSemesterProjekt.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using AndenSemesterProjekt.Models;
 
 namespace AndenSemesterProjekt.Pages.Users
 {
     public class CreateUsersModel : PageModel
     {
-        [BindProperty]
-        public AndenSemesterProjekt.Users User { get; set; }
+        IUserRepository repo;
+
+        [BindProperty] public CreateUsersModel Users { get; set; }
+
+        public CreateUsersModel(IUserRepository repository)
+        {
+            repo = repository;
+        }
 
         public IActionResult OnGet()
         {
@@ -20,8 +23,16 @@ namespace AndenSemesterProjekt.Pages.Users
 
         public IActionResult OnPost()
         {
-            return Page();
+            if (!ModelState.IsValid)
+            {
+                return Page();
+
+            }
+
+            repo.AddUser(Users);
+            return RedirectToPage("Index");
         }
 
     }
+
 }
