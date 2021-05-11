@@ -16,11 +16,17 @@ namespace AndenSemesterProjekt
             CreateHostBuilder(args).Build().Run();
         }
 
-<<<<<<< HEAD
         // hva så gitchamp
         // Hallo
-=======
->>>>>>> a876e0950c526c08607c986f41e696082e188ba0
+        // Hallo
+=========
+>>>>>>>>> Temporary merge branch 2
+        // Hallo
+=========
+>>>>>>>>> Temporary merge branch 2
+        // Hallo
+=========
+>>>>>>>>> Temporary merge branch 2
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
