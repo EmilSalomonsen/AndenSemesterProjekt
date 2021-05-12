@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 using AndenSemesterProjekt.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using AndenSemesterProjekt.Models;
+using Microsoft.AspNetCore.Routing;
+
 
 namespace AndenSemesterProjekt.Pages.Routes
 {
@@ -14,7 +15,7 @@ namespace AndenSemesterProjekt.Pages.Routes
         IRoutesRepository repo;
 
         [BindProperty]
-        public EditRoutesModel Routes { get; set; }
+        public Models.Routes Routes { get; set; }
 
         public EditRoutesModel(IRoutesRepository repository)
         {
