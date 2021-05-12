@@ -13,7 +13,7 @@ namespace AndenSemesterProjekt.Pages.Routes
     {
         IRoutesRepository repo;
 
-        [BindProperty] public CreateRoutesModel Routes { get; set; }
+        [BindProperty] public Models.Routes Routes { get; set; }
 
         public CreateRoutesModel(IRoutesRepository repository)
         {

@@ -2,6 +2,7 @@ using AndenSemesterProjekt.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using AndenSemesterProjekt.Models;
+using Microsoft.Extensions.Logging;
 
 namespace AndenSemesterProjekt.Pages.Users
 {
@@ -9,8 +10,9 @@ namespace AndenSemesterProjekt.Pages.Users
     {
         IUserRepository repo;
 
-        [BindProperty] public CreateUsersModel Users { get; set; }
+        [BindProperty] public Models.Users Users { get; set; }
 
+        
         public CreateUsersModel(IUserRepository repository)
         {
             repo = repository;

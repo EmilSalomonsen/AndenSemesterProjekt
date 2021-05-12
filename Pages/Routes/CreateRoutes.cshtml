@@ -1,9 +1,22 @@
 ﻿@page
 @model AndenSemesterProjekt.Pages.Routes.CreateRoutesModel
 @{
+    ViewData["Title"] = "Opret en rute";
 }
 
-<!--    Add picture through file       -->
+@*<h1> Opret rute </h1>
+<div class="row">
+    <div class="col-md-4">
+        <form method = "post">
+            <div class="form-group">
+                <label asp-for="@Model.Routes.NrOfSeats" class ="control-label"></label>
+            </div>
+        </form>
+
+    </div>
+</div>*@
+
+    Add picture through file       
 <form action="/action_page.php">
     <input type="file" id="myFile" name="filename">
     <input type="submit">
@@ -16,15 +29,15 @@
 <h1>Antal sæder tilgængelig i din bil:</h1>
 
 <form action="/action_page.php">
-    <label for="quantity">Antal sæder (Mellem 1 og 7):</label>
-    <input type="number" id="quantity" name="quantity" min="1" max="10000">
+    <label for="quantity" asp-for="@Model.Routes.NrOfSeats" class ="control-label">Antal sæder (Mellem 1 og 7):</label>
+    <input type="number" id="quantity" name="quantity" min="1" max="10000" >
     <input type="submit">
 </form>
 
 </body>
 </html>
 
-<!-- PHP UPLOAD
+ PHP UPLOAD
 
 <!DOCTYPE html>
 <html>
@@ -38,4 +51,3 @@
 
 </body>
 </html>
--->

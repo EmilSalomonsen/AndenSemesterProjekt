@@ -1,6 +1,7 @@
 ﻿using AndenSemesterProjekt.Pages.Users;
 using System;
 using System.Collections.Generic;
+using AndenSemesterProjekt.Models;
 
 namespace AndenSemesterProjekt.Interfaces
 {

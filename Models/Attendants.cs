@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AndenSemesterProjekt.Models;
 
-namespace AndenSemesterProjekt
+namespace AndenSemesterProjekt.Models
 {
     public class Attendants : Users
     {

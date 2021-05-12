@@ -12,29 +12,29 @@ namespace AndenSemesterProjekt
     public class DeleteRoutesModel : PageModel
     {
 
-        [BindProperty]
-        public Routes Routes { get; set; }
+        //[BindProperty]
+        //public Routes Routes { get; set; }
 
-        IRoutesService routesService;
+        //IRoutesService routesService;
 
-        public DeleteRoutesModel(IRoutesRepository service)
-        {
-            routesService = service;
-        }
+        //public DeleteRoutesModel(IRoutesRepository service)
+        //{
+        //    routesService = service;
+        //}
 
-        public IActionResult OnGet(int ID)
-        {
-            Routes = Routes.GetRoutes(ID);
-            return Routes();
-        }
-        public IActionResult OnPost(int ID)
-        {
-            if (Routes != null)
-            {
-                routesService.DeleteRoutes(ID);
-            }
-            return RedirectToPage("routes");
-        }
+        //public IActionResult OnGet(int ID)
+        //{
+        //    Routes = Models.Routes.GetRoutes(ID);
+        //    return Routes();
+        //}
+        //public IActionResult OnPost(int ID)
+        //{
+        //    if (Routes != null)
+        //    {
+        //        routesService.DeleteRoutes(ID);
+        //    }
+        //    return RedirectToPage("routes");
+        //}
 
     }
 }
