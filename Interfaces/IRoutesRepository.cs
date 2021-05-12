@@ -1,11 +1,16 @@
-﻿using System;
+﻿using AndenSemesterProjekt.Models;
+using AndenSemesterProjekt.Pages.Routes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace AndenSemesterProjekt.Interfaces
 {
-    interface IRoutesRepository
+    public interface IRoutesRepository
     {
+        Routes GetRoutes(int id);
+
+        void EditRoutes(Routes routes);
     }
 }
