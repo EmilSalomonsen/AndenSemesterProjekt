@@ -5,34 +5,34 @@ using System.Threading.Tasks;
 using AndenSemesterProjekt.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Routing;
 
 namespace AndenSemesterProjekt.Pages.Routes
 {
     public class DeleteRoutesModel : PageModel
     {
+        IRoutesRepository repo;
 
         [BindProperty]
         public Models.Routes Routes { get; set;}
 
-        IRoutesService routesService;
-
-        public DeleteRoutesModel(IRoutesRepository service)
+        public DeleteRoutesModel(IRoutesRepository repository)
         {
-            RouteService = service;
+            repo = repository;
         }
 
         public IActionResult OnGet(int ID)
         {
-            Route = Routes.getRoute(ID);
-            return Route();
+            Routes = repo.GetRoutes(ID);
+            return Page();
         }
-        public IActionResult OnPost(int ID)
+        public IActionResult OnPost(int id)
         {
-            if (Routes != null)
+            if (!ModelState.IsValid)
             {
-                routesService.DeleteRoute(ID);
+                return Page();
             }
+            repo.DeleteRoute(Routes);
             return RedirectToPage("routes");
         }
 
