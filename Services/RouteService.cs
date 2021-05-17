@@ -15,11 +15,6 @@ namespace AndenSemesterProjekt.Services
         {
             _context = context;
         }
-
-        public IEnumerable<Route> GetAllProduct()
-        {
-            return _context.Products;
-        }
         public void EditRoutes(Route routes)
         {
             throw new NotImplementedException();
@@ -33,6 +28,12 @@ namespace AndenSemesterProjekt.Services
         public Route GetRoutes(int id)
         {
             return _context.Routes.Where(r => r.RouteId == id).FirstOrDefault();
+        }
+
+        public void DeleteRoutes(Route route)
+        {
+            _context.Routes.Remove(route);
+            _context.SaveChanges();
         }
     }
 }

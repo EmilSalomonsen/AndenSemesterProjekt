@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AndenSemesterProjekt.Interfaces;
+using AndenSemesterProjekt.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Routing;
@@ -14,7 +15,7 @@ namespace AndenSemesterProjekt.Pages.Routes
         IRoutesRepository repo;
 
         [BindProperty]
-        public Route Routes { get; set;}
+        public Models.Route Route { get; set;}
 
         public DeleteRoutesModel(IRoutesRepository repository)
         {
@@ -23,7 +24,7 @@ namespace AndenSemesterProjekt.Pages.Routes
 
         public IActionResult OnGet(int ID)
         {
-            Routes = repo.GetRoutes(ID);
+            Route = repo.GetRoutes(ID);
             return Page();
         }
         public IActionResult OnPost(int id)
@@ -32,7 +33,7 @@ namespace AndenSemesterProjekt.Pages.Routes
             {
                 return Page();
             }
-            repo.DeleteRoute(Routes);
+            repo.DeleteRoutes(Route);
             return RedirectToPage("routes");
         }
 
