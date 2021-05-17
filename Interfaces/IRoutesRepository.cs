@@ -11,8 +11,9 @@ namespace AndenSemesterProjekt.Interfaces
     {
         IEnumerable<Route> GetAllRoutes();
         Route GetRoutes(int id);
+        void EditRoutes(Route routes);
 
-        Route EditRoutes(Route routes);
+        void DeleteRoutes(Route routes);
 
         Route AddRoute(Route r);
     }
