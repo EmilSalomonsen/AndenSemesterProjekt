@@ -1,4 +1,5 @@
-﻿using AndenSemesterProjekt.Pages.Users;
+﻿using AndenSemesterProjekt.Models;
+using AndenSemesterProjekt.Pages.Users;
 using System;
 using System.Collections.Generic;
 
@@ -6,12 +7,12 @@ namespace AndenSemesterProjekt.Interfaces
 {
     public interface IUserRepository
     {
-		IEnumerable<Users> FilterUser(string criteria);
-		IEnumerable<Users> GetAllPUser();
-		Users GetUser(int id);
-		Users AddUser(Users u);
-		Users UpdateUser(Users u);
-		Users RemoveUser(int id);
+		IEnumerable<User> FilterUser(string criteria);
+		IEnumerable<User> GetAllPUser();
+		User GetUser(int id);
+		User AddUser(User u);
+		User UpdateUser(User u);
+		User RemoveUser(int id);
         void AddUser(CreateUsersModel users);
     }
 }

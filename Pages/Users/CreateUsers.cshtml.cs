@@ -10,7 +10,7 @@ namespace AndenSemesterProjekt.Pages.Users
         IUserRepository repo;
 
         [BindProperty]
-        public CreateUsersModel Users { get; set; }
+        public Models.User User { get; set; }
 
         public CreateUsersModel(IUserRepository repository)
         {
@@ -29,7 +29,7 @@ namespace AndenSemesterProjekt.Pages.Users
                 return Page();
 
             }
-            repo.AddUser(Users);
+            repo.AddUser(User);
             return RedirectToPage("Index");
         }
 
