@@ -13,5 +13,7 @@ namespace AndenSemesterProjekt.Interfaces
         Route GetRoutes(int id);
 
         void EditRoutes(Route routes);
+
+        void DeleteRoutes(Route routes);
     }
 }
