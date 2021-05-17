@@ -9,10 +9,9 @@ namespace AndenSemesterProjekt.Interfaces
 {
     public interface IRoutesRepository
     {
-        Routes GetRoutes(int id);
+        IEnumerable<Route> GetAllRoutes();
+        Route GetRoutes(int id);
 
-        void EditRoutes(Routes routes);
-
-        void DeleteRoute(Routes routes);
+        void EditRoutes(Route routes);
     }
 }

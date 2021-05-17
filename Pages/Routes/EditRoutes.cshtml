@@ -11,7 +11,7 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="All" class="text-danger"></div>
-            <input type="hidden" asp-for="@Model.Routes.ID" />
+            <input type="hidden" asp-for="@Model.Routes.RouteId" />
             <div class="form-group">
                 <label asp-for="@Model.Routes.NrOfSeats" class="control-label"></label>
                 <input asp-for="@Model.Routes.NrOfSeats" class="form-control" />
@@ -28,9 +28,9 @@
                 <span asp-validation-for="@Model.Routes.EndAdress" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.Routes.ETA" class="control-label"></label>
-                <input asp-for="@Model.Routes.ETA" class="form-control" />
-                <span asp-validation-for="@Model.Routes.ETA" class="text-danger"></span>
+                <label asp-for="@Model.Routes.Eta" class="control-label"></label>
+                <input asp-for="@Model.Routes.Eta" class="form-control" />
+                <span asp-validation-for="@Model.Routes.Eta" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

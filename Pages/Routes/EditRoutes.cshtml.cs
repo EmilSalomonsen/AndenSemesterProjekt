@@ -15,7 +15,7 @@ namespace AndenSemesterProjekt.Pages.Routes
         IRoutesRepository repo;
 
         [BindProperty]
-        public Models.Routes Routes { get; set; }
+        public Models.Route Routes { get; set; }
 
         public EditRoutesModel(IRoutesRepository repository)
         {
