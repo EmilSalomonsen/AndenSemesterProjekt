@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AndenSemesterProjekt.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using AndenSemesterProjekt.Models;
 
 namespace AndenSemesterProjekt.Pages.Routes
 {
