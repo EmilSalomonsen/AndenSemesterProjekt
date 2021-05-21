@@ -34,7 +34,7 @@ namespace AndenSemesterProjekt.Pages.Routes
             {
                 return Page();
             }
-            repo.AddAttendantToRoute(Attendant, Route);
+            repo.AddAttendantToRoute(Route);
             return RedirectToPage("Routes");
         }
     }
