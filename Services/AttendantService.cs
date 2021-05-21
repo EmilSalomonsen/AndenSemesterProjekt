@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 
 namespace AndenSemesterProjekt.Services
 {
-    public class AdminService
+    public class AttendantService : IAttendantsRepository
     {
         private readonly UsersdbContext _context;
 
-        public AdminService(UsersdbContext context)
+        public AttendantService(UsersdbContext context)
         {
             _context = context;
         }
-        public Admin GetAdmin(int id)
-        {
-            return _context.Admins.Where(A => A.adminID == id).FirstOrDefault();
-        }
 
-        public void DeleteAdmin(Admin admin)
+        public Attendant GetAttendant(string id)
         {
-            _context.Admins.Remove(admin);
+            return _context.Attendants.Where(a => a.AttendantId == id).FirstOrDefault();
+        }
+        public void DeleteAttendant(Attendant attendant)
+        {
+            _context.Attendants.Remove(attendant);
             _context.SaveChanges();
         }
     }

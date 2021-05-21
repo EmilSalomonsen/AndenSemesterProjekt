@@ -56,9 +56,15 @@ namespace AndenSemesterProjekt.Services
             return _context.Routes.Where(r => r.RouteId == id).FirstOrDefault();
         }
 
-        public void DeleteRoutes(Route route)
+        public void DeleteRoute(Route route)
         {
             _context.Routes.Remove(route);
+            _context.SaveChanges();
+        }
+        public void AddAttendantToRoute(Attendant attendant, Route route)
+        {
+            _context.Attach(attendant);
+            _context.Entry(attendant).Property("AttendantId)").IsModified = true;
             _context.SaveChanges();
         }
     }

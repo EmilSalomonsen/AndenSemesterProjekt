@@ -9,5 +9,20 @@ namespace AndenSemesterProjekt.Services
 {
     public class UserService
     {
+        private readonly UsersdbContext _context;
+
+        public UserService(UsersdbContext context)
+        {
+            _context = context;
+        }
+        public User GetUser(string id)
+        {
+            return _context.Users.Where(u => u.UserId == id).FirstOrDefault();
+        }
+        public void RemoveUser(User user)
+        {
+            _context.Users.Remove(user);
+            _context.SaveChanges();
+        }
     }
 }

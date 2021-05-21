@@ -1,22 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace AndenSemesterProjekt
+namespace AndenSemesterProjekt.Models
 {
-    public class Admin
+    public partial class Admin
     {
-        public string adminUsername { get; set; }
-        public string adminPassword { get; set; }
+        [Key]
+        [Column("adminID")]
+        [StringLength(5)]
         public int adminID { get; set; }
+
+        [Required]
+        [StringLength(50)]
         public string adminFirstName { get; set; }
-        public string adminLastName {get; set; }
 
-        public Admin()
-        {
+        [Required]
+        [StringLength(50)]
+        public string adminLastName { get; set; }
 
-        }
+        [Required]
+        [StringLength(50)]
+        public string adminUsername { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string adminPassword { get; set; }
+
 
 
     }

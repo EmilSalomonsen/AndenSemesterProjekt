@@ -1,4 +1,30 @@
 ﻿@page
 @model AndenSemesterProjekt.Pages.Drivers.DeleteDriversModel
 @{
+    ViewData["title"] = "DeleteDriver";
 }
+
+<h1>Slet Bruger</h1>
+<h3>Er du sikker på du vil slette denne profil</h3>
+<div>
+    <form method="post">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Driver.DriverId)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Driver.DriverId)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Driver.Phone)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Driver.Phone)
+            </dd>
+        </dl>
+        <input type="submit" value="Delete" class="btn btn-danger" />
+    </form>
+    <div>
+        <a asp-page="Index">Tilbage til Forsiden</a>
+    </div>
+</div>

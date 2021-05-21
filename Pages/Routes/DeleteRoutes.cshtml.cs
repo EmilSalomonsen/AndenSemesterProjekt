@@ -27,13 +27,13 @@ namespace AndenSemesterProjekt.Pages.Routes
             Route = repo.GetRoutes(ID);
             return Page();
         }
-        public IActionResult OnPost(int id)
+        public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-            repo.DeleteRoutes(Route);
+            repo.DeleteRoute(Route);
             return RedirectToPage("routes");
         }
 

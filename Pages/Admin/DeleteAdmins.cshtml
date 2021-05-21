@@ -1,4 +1,48 @@
 ﻿@page
 @model AndenSemesterProjekt.Pages.Admin.DeleteAdminsModel
 @{
+    ViewData["title"] = "DeleteAdmin";
 }
+
+<h1>Slet Admin</h1>
+<h3>Er du sikker på du vil slette denne Admin</h3>
+<div>
+    <form method="post">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Admin.adminID)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Admin.adminID)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Admin.adminUsername)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Admin.adminUsername)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Admin.adminPassword)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Admin.adminPassword)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Admin.adminFirstName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Admin.adminFirstName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Admin.adminLastName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Admin.adminLastName)
+            </dd>
+        </dl>
+        <input type="submit" value="Delete" class="btn btn-danger" />
+    </form>
+    <div>
+        <a asp-page="Index">Tilbage til forside</a>
+    </div>
+</div>
