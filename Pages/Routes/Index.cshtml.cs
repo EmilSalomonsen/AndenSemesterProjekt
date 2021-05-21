@@ -12,7 +12,7 @@ namespace AndenSemesterProjekt.Pages.Routes
     public class IndexModel : PageModel
     {
         private readonly IRoutesRepository _repo;
-        public IEnumerable<Models.Route> Routes { get; set; }
+        public IEnumerable<Models.Route> Routes { get; set; } = new List<Route>();
         public IndexModel (IRoutesRepository repo)
         {
             _repo = repo;

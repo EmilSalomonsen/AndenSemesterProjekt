@@ -16,6 +16,9 @@
                 Routes_ID
             </th>
             <th>
+                DriverID
+            </th>
+            <th>
                 NrOfSeats
             </th>
             <th>
@@ -37,6 +40,9 @@
                     @r.RouteId
                 </td>
                 <td>
+                    @r.DriverId
+                </td>
+                <td>
                     @r.NrOfSeats
                 </td>
                 <td>
@@ -56,8 +62,8 @@
 
                 <td>
                     <p>
-                        <a asp-page="EditRoute" asp-route-id="@r.RouteId" class="btn btn-primary m-1">Edit</a> |
-                        <a asp-page="DeleteRoute" asp-route-id="@r.RouteId" class="btn btn-primary m-1">Delete</a>
+                        <a asp-page="EditRoutes" asp-route-id="@r.RouteId" class="btn btn-primary m-1">Edit</a> |
+                        <a asp-page="/Routes/DeleteRoutes" asp-route-id="@r.RouteId" class="btn btn-primary m-1">Delete</a>
                     </p>
                 </td>
             </tr>
