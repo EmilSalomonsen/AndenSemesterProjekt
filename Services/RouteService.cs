@@ -9,30 +9,30 @@ namespace AndenSemesterProjekt.Services
 {
     public class RouteService : IRoutesRepository
     {
-        private readonly UsersdbContext _context;
+        private readonly AppDBContext _context;
 
-        public RouteService(UsersdbContext context)
+        public RouteService(AppDBContext context)
         {
             _context = context;
         }
 
         public Route AddRoute (Route r)
         {
-            GetAllRoutes().ToList();
-            List<int> routeIds = new List<int>();
-            foreach (var rc in GetAllRoutes())
-            {
-                routeIds.Add(rc.RouteId);
-            }
-            if (routeIds.Count !=0)
-            {
-                int start = routeIds.Max();
-                r.RouteId = start + 1;
-            }
-            else
-            {
-                r.RouteId = 1;
-            }
+            //GetAllRoutes().ToList();
+            //List<int> routeIds = new List<int>();
+            //foreach (var rc in GetAllRoutes())
+            //{
+            //    routeIds.Add(rc.RouteId);
+            //}
+            //if (routeIds.Count !=0)
+            //{
+            //    int start = routeIds.Max();
+            //    r.RouteId = start + 1;
+            //}
+            //else
+            //{
+            //    r.RouteId = 1;
+            //}
             _context.Routes.Add(r);
             _context.SaveChanges();
             return r;
@@ -48,7 +48,7 @@ namespace AndenSemesterProjekt.Services
 
         public IEnumerable<Route> GetAllRoutes()
         {
-            return _context.Routes.ToList();
+            return _context.Routes;
         }
 
         public Route GetRoutes(int id)
@@ -56,7 +56,34 @@ namespace AndenSemesterProjekt.Services
             return _context.Routes.Where(r => r.RouteId == id).FirstOrDefault();
         }
 
-        public void DeleteRoute(Route route)
+
+        //public Route DeleteRoute(Route Route)
+        //{
+        //    Route route = _context.Routes.Find(Route);
+        //    if (route != null)
+        //    {
+        //        _context.Routes.Remove(route);
+        //        _context.SaveChanges();
+        //    }
+
+        //    return route;
+
+        //}
+
+        public void DeleteRoute(int id)
+        {
+            Route route = _context.Routes.Find(id);
+            if (route != null)
+            {
+                _context.Routes.Remove(route);
+                _context.SaveChanges();
+            }
+        }
+        
+
+}
+
+        public void DeleteRoutes(Route route)
         {
             _context.Routes.Remove(route);
             _context.SaveChanges();
@@ -68,4 +95,5 @@ namespace AndenSemesterProjekt.Services
             _context.SaveChanges();
         }
     }
+
 }

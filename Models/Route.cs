@@ -13,13 +13,13 @@ namespace AndenSemesterProjekt.Models
     {
         [Key]
         [Column("RouteID")]
-        [StringLength(5)]
+       
         public int RouteId { get; set; }
-        [Required]
+        //[Required]
         [Column("DriverID")]
         [StringLength(5)]
         public string DriverId { get; set; }
-        [Required]
+        //[Required]
         [Column("AttendantID")]
         [StringLength(5)]
         public string AttendantId { get; set; }
@@ -32,12 +32,12 @@ namespace AndenSemesterProjekt.Models
         [Required]
         [StringLength(50)]
         public string EndAdress { get; set; }
-        [Required]
+        //[Required]
         [Column("ETA")]
         [StringLength(10)]
         public string Eta { get; set; }
-        [Required]
-        [StringLength(50)]
+        //[Required]
+        //[StringLength(50)]
         public string PickupPoints { get; set; }
 
         [ForeignKey(nameof(AttendantId))]

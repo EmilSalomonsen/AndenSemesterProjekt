@@ -1,4 +1,39 @@
 ﻿@page
 @model AndenSemesterProjekt.Pages.Routes.CreateRoutesModel
 @{
+    ViewData["Title"] = "CreateRoute";
 }
+<form method="post">
+    <h3>Insert information</h3>
+
+
+    @*<div class="form-group">
+        <label hidden ="hidden"> Route ID</label><input hidden ="hidden" asp-for="@Model.Route.RouteId" class="form-control" />
+        <span asp-validation-for="Route.RouteId" class="text-danger"></span>
+    </div>*@
+    <div class="form-group">
+        <label>Your Driver ID</label><input asp-for="@Model.Route.DriverId" class="form-control" />
+        <span asp-validation-for="Route.DriverId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Number of Seats:</label><input asp-for="@Model.Route.NrOfSeats" class="form-control" />
+        <span asp-validation-for="Route.NrOfSeats" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Start Adress:</label><input asp-for="@Model.Route.StartAdress" class="form-control" />
+        <span asp-validation-for="Route.StartAdress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>End Adress:</label><input asp-for="@Model.Route.EndAdress" class="form-control" />
+        <span asp-validation-for="Route.EndAdress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Estimated Time of Arrival: </label><input asp-for="@Model.Route.Eta" class="form-control" />
+        <span asp-validation-for="Route.Eta" class="text-danger"></span>
+    </div>
+
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Add Route" />
+        <a asp-page="/Routes/Index" class="btn btn-primary"> Cancel</a>
+    </div>
+</form>
