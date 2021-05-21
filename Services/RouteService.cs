@@ -16,7 +16,7 @@ namespace AndenSemesterProjekt.Services
             _context = context;
         }
 
-        public Route AddRoute (Route r)
+        public Route AddRoute(Route r)
         {
             //GetAllRoutes().ToList();
             //List<int> routeIds = new List<int>();
@@ -37,7 +37,7 @@ namespace AndenSemesterProjekt.Services
             _context.SaveChanges();
             return r;
         }
-       
+
         public Route EditRoutes(Route r)
         {
             var routes = _context.Routes.Attach(r);
@@ -79,15 +79,13 @@ namespace AndenSemesterProjekt.Services
                 _context.SaveChanges();
             }
         }
-        
-
-}
-
-        public void DeleteRoutes(Route route)
+        public void AddAttendantToRoute(Route route)
         {
-            _context.Routes.Remove(route);
+            _context.Attach(route);
+            _context.Entry(route).Property("AttendantId)").IsModified = true;
             _context.SaveChanges();
         }
-    }
 
+    }
 }
+

@@ -1,11 +1,16 @@
-﻿using System;
+﻿using AndenSemesterProjekt.Models;
+using AndenSemesterProjekt.Pages.Attendants;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace AndenSemesterProjekt.Interfaces
 {
-    interface IAttendantsRepository
+    public interface IAttendantsRepository
     {
+        Attendant GetAttendant(string id);
+        void DeleteAttendant(Attendant attendant);
     }
+
 }

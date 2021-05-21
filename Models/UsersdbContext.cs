@@ -17,7 +17,7 @@ namespace AndenSemesterProjekt.Models
             : base(options)
         {
         }
-
+        public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Attendant> Attendants { get; set; }
         public virtual DbSet<Driver> Drivers { get; set; }
         public virtual DbSet<PickupPoint> PickupPoints { get; set; }
@@ -36,6 +36,19 @@ namespace AndenSemesterProjekt.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
+            
+            modelBuilder.Entity<Admin>(entity =>
+            {
+                entity.Property(e => e.adminID).IsFixedLength(true);
+
+                entity.Property(e => e.adminFirstName).IsFixedLength(true);
+
+                entity.Property(e => e.adminLastName).IsFixedLength(true);
+
+                entity.Property(e => e.adminUsername).IsFixedLength(true);
+
+                entity.Property(e => e.adminPassword).IsFixedLength(true);
+            });
 
             modelBuilder.Entity<Attendant>(entity =>
             {
