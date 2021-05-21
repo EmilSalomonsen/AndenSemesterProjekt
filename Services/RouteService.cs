@@ -56,6 +56,7 @@ namespace AndenSemesterProjekt.Services
             return _context.Routes.Where(r => r.RouteId == id).FirstOrDefault();
         }
 
+
         //public Route DeleteRoute(Route Route)
         //{
         //    Route route = _context.Routes.Find(Route);
@@ -81,4 +82,12 @@ namespace AndenSemesterProjekt.Services
         
 
 }
+
+        public void DeleteRoutes(Route route)
+        {
+            _context.Routes.Remove(route);
+            _context.SaveChanges();
+        }
+    }
+
 }
