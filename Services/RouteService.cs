@@ -51,6 +51,16 @@ namespace AndenSemesterProjekt.Services
             return _context.Routes;
         }
 
+        public IEnumerable<Route> FilterRoute(string criteria)
+        {
+            if (string.IsNullOrEmpty(criteria))
+            {
+                return _context.Routes;
+            }
+
+            return _context.Routes.Where(e => e.NrOfSeats.Contains(criteria));
+        }
+
         public Route GetRoutes(int id)
         {
             return _context.Routes.Where(r => r.RouteId == id).FirstOrDefault();

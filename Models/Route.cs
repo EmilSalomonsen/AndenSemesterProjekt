@@ -40,6 +40,8 @@ namespace AndenSemesterProjekt.Models
         //[StringLength(50)]
         public string PickupPoints { get; set; }
 
+        public string ImageName { get; set; }
+
         [ForeignKey(nameof(AttendantId))]
         [InverseProperty("Routes")]
         public virtual Attendant Attendant { get; set; }
