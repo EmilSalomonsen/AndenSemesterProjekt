@@ -16,7 +16,7 @@ namespace AndenSemesterProjekt.Services
             _context = context;
         }
 
-        public Route AddRoute (Route r)
+        public Route AddRoute(Route r)
         {
             //GetAllRoutes().ToList();
             //List<int> routeIds = new List<int>();
@@ -33,13 +33,17 @@ namespace AndenSemesterProjekt.Services
             //{
             //    r.RouteId = 1;
             //}
+            r.AttendantId = 1;
+            r.DriverId = 1;
             _context.Routes.Add(r);
             _context.SaveChanges();
             return r;
         }
-       
+
         public Route EditRoutes(Route r)
         {
+            r.AttendantId = 1;
+            r.DriverId = 1;
             var routes = _context.Routes.Attach(r);
             routes.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _context.SaveChanges();
@@ -66,6 +70,7 @@ namespace AndenSemesterProjekt.Services
             return _context.Routes.Where(r => r.RouteId == id).FirstOrDefault();
         }
 
+
         //public Route DeleteRoute(Route Route)
         //{
         //    Route route = _context.Routes.Find(Route);
@@ -88,7 +93,11 @@ namespace AndenSemesterProjekt.Services
                 _context.SaveChanges();
             }
         }
-        
 
+      
+    }
 }
-}
+
+     
+
+

@@ -19,7 +19,7 @@ namespace AndenSemesterProjekt.Models
         [Key]
         [Column("AttendantID")]
         [StringLength(5)]
-        public string AttendantId { get; set; }
+        public int AttendantId { get; set; }
         [StringLength(20)]
         public string Phone { get; set; }
 
