@@ -16,7 +16,6 @@ namespace AndenSemesterProjekt.Pages.Routes
         IRoutesRepository repo;
 
         [BindProperty]
-
         public Models.Route Route { get; set; } = new Models.Route();
        
         public DeleteRoutesModel(IRoutesRepository repository)
@@ -39,5 +38,6 @@ namespace AndenSemesterProjekt.Pages.Routes
            
             return RedirectToPage("index");
         }
+
     }
 }

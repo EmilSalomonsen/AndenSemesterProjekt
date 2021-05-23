@@ -33,6 +33,8 @@ namespace AndenSemesterProjekt.Services
             //{
             //    r.RouteId = 1;
             //}
+            r.AttendantId = 1;
+            r.DriverId = 1;
             _context.Routes.Add(r);
             _context.SaveChanges();
             return r;
@@ -40,6 +42,8 @@ namespace AndenSemesterProjekt.Services
 
         public Route EditRoutes(Route r)
         {
+            r.AttendantId = 1;
+            r.DriverId = 1;
             var routes = _context.Routes.Attach(r);
             routes.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _context.SaveChanges();
@@ -49,6 +53,16 @@ namespace AndenSemesterProjekt.Services
         public IEnumerable<Route> GetAllRoutes()
         {
             return _context.Routes;
+        }
+
+        public IEnumerable<Route> FilterRoute(string criteria)
+        {
+            if (string.IsNullOrEmpty(criteria))
+            {
+                return _context.Routes;
+            }
+
+            return _context.Routes.Where(e => e.NrOfSeats.Contains(criteria));
         }
 
         public Route GetRoutes(int id)
@@ -79,13 +93,11 @@ namespace AndenSemesterProjekt.Services
                 _context.SaveChanges();
             }
         }
-        public void AddAttendantToRoute(Route route)
-        {
-            _context.Attach(route);
-            _context.Entry(route).Property("AttendantId)").IsModified = true;
-            _context.SaveChanges();
-        }
 
+      
     }
 }
+
+     
+
 

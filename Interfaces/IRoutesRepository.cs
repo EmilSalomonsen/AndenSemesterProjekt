@@ -9,13 +9,14 @@ namespace AndenSemesterProjekt.Interfaces
 {
     public interface IRoutesRepository
     {
+        IEnumerable<Route> FilterRoute(string criteria);
         IEnumerable<Route> GetAllRoutes();
         Route GetRoutes(int id);
+
         Route EditRoutes(Route routes);
 
         Route AddRoute(Route r);
 
         void DeleteRoute(int id);
-        void AddAttendantToRoute( Route route);
     }
 }

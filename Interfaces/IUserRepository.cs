@@ -12,7 +12,7 @@ namespace AndenSemesterProjekt.Interfaces
 		User GetUser(int id);
 		User AddUser(User u);
 		User UpdateUser(User u);
-		void RemoveUser(User u);
+		User RemoveUser(int id);
         void AddUser(CreateUsersModel users);
     }
 }
