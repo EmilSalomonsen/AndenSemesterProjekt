@@ -23,7 +23,7 @@ namespace AndenSemesterProjekt.Models
         [Column("AttendantID")]
         [StringLength(5)]
         public string AttendantId { get; set; }
-        [Required]
+        //[Required]
         [StringLength(5)]
         public string NrOfSeats { get; set; }
         [Required]

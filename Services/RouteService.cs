@@ -79,11 +79,13 @@ namespace AndenSemesterProjekt.Services
                 _context.SaveChanges();
             }
         }
-        public void AddAttendantToRoute(Route route)
+        public Route AddAttendantToRoute(Route route)
         {
-            _context.Attach(route);
-            _context.Entry(route).Property("AttendantId)").IsModified = true;
+            var Foundroute = _context.Routes.First(r => r.RouteId == route.RouteId);
+            Foundroute.AttendantId = route.AttendantId;
+            //routes.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             _context.SaveChanges();
+            return route;
         }
 
     }

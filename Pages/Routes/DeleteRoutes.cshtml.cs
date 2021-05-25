@@ -37,7 +37,7 @@ namespace AndenSemesterProjekt.Pages.Routes
                 repo.DeleteRoute(id);
             }
            
-            return RedirectToPage("index");
+            return RedirectToPage("Index");
         }
     }
 }

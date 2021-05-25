@@ -4,28 +4,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using AndenSemesterProjekt.Models;
 using AndenSemesterProjekt.Interfaces;
+using Microsoft.AspNetCore.Routing;
 
 namespace AndenSemesterProjekt.Pages.Routes
 {
     public class AddAttendentToRouteModel : PageModel
     {
         IRoutesRepository repo;
-        IAttendantsRepository repoA;
         [BindProperty]
-        public Attendant Attendant { get; set; }
-        public Route Route { get; set; }
+        public Models.Route Route { get; set; }
 
-        public AddAttendentToRouteModel(IRoutesRepository repository, IAttendantsRepository repository1)
+        public AddAttendentToRouteModel(IRoutesRepository repository)
         {
             repo = repository;
-            repoA = repository1;
         }
-        public IActionResult OnGet(string AId, int RId)
+        public IActionResult OnGet(int id)
         {
-            Attendant = repoA.GetAttendant(AId);
-            Route = repo.GetRoutes(RId);
+            Route = repo.GetRoutes(id);
+            //Routes = repo.GetAllRoutes().Where(r => r.RouteId == id).FirstOrDefault();
             return Page();
         }
         public IActionResult OnPost()
@@ -35,7 +32,7 @@ namespace AndenSemesterProjekt.Pages.Routes
                 return Page();
             }
             repo.AddAttendantToRoute(Route);
-            return RedirectToPage("Routes");
+            return RedirectToPage("/Routes/Index");
         }
     }
 }
