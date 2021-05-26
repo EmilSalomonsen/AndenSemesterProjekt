@@ -1,7 +1,9 @@
 ﻿@page
 @model AndenSemesterProjekt.Pages.SelectRoute.IndexModel
 @{
+
     ViewData["Title"] = "Select Route";
+
 }
 
 <form>
@@ -11,12 +13,16 @@
     </p>
 </form>
 
+
 <div class="container">
+=======
+
     <div class="row">
         @foreach (var r in Model.Routes)
             {
                 <div class="col-sm">
                     <div class="card" style="width: 30rem;">
+
                         <img class="card-img-top" src="~/Image/@r.ImageName" alt="Card image cap" />
                         <div class="card-body">
                             <h5 class="card-title">Route number: @r.RouteId</h5>
@@ -31,3 +37,4 @@
             }
     </div>
 </div>
+

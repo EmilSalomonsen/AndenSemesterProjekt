@@ -62,7 +62,11 @@ namespace AndenSemesterProjekt.Services
                 return _context.Routes;
             }
 
+
+
             return _context.Routes.Where(e => e.NrOfSeats == criteria);
+
+
         }
 
         public Route GetRoutes(int id)
@@ -93,6 +97,7 @@ namespace AndenSemesterProjekt.Services
                 _context.SaveChanges();
             }
         }
+
         public Route AddAttendantToRoute(Route route)
         {
             var Foundroute = _context.Routes.First(r => r.RouteId == route.RouteId);
@@ -125,5 +130,6 @@ namespace AndenSemesterProjekt.Services
 }
 
      
+
 
 
