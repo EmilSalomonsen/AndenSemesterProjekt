@@ -4,6 +4,8 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 # User-specific files
+AppDBContext.dgml
+*UsersdbContext.cs
 *.rsuser
 *.suo
 *.user
@@ -42,6 +44,7 @@ Generated\ Files/
 # NUNIT
 *.VisualState.xml
 TestResult.xml
+
 
 # Build Results of an ATL Project
 [Dd]ebugPS/
