@@ -16,5 +16,6 @@ namespace AndenSemesterProjekt.Services
         }
 
         public DbSet<Route> Routes { get; set; }
+        public DbSet<Attendant> Attendants { get; set; }
     }
 }
