@@ -11,7 +11,9 @@ namespace AndenSemesterProjekt.Pages.SelectRoute
 {
     public class IndexModel : PageModel
     {
-        private IRoutesRepository _repo;
+
+        public IRoutesRepository _repo;
+
 
         public IEnumerable<Route> Routes { get; set; }
 

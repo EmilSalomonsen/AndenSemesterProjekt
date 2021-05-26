@@ -31,6 +31,10 @@
         <label>Estimated Time of Arrival: </label><input asp-for="@Model.Route.Eta" class="form-control" />
         <span asp-validation-for="Route.Eta" class="text-danger"></span>
     </div>
+    <div class="form-group">
+        <label>Image of Route: </label><input asp-for="@Model.Route.ImageName" class="form-control" />
+        <span asp-validation-for="Route.ImageName" class="text-danger"></span>
+    </div>
 
     <div class="text-center">
         <input class="btn btn-primary" type="submit" value="Add Route" />

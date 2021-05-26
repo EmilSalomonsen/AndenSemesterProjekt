@@ -19,7 +19,8 @@ namespace AndenSemesterProjekt.Models
         public int DriverId { get; set; }
     
         [Column("AttendantID")]
-        public int AttendantId { get; set; }
+        public int? AttendantId { get; set; }
+
 
         [Required]
         [StringLength(10)]
