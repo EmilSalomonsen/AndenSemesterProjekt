@@ -1,10 +1,10 @@
 ﻿@page
-@model AndenSemesterProjekt.Pages.SelectRoute.AttendantBookingsModel
+@model AndenSemesterProjekt.Pages.SelectRoute.AttendantsBookingsCancelModel
 @{
-    ViewData["title"] = "Sign up";
+    ViewData["title"] = "Cancel Sign up";
 }
-<h1>Sign up</h1>
-<h3>Are you sure you want to sign up for this route?</h3>
+<h1>Cancel Sign up</h1>
+<h3>Are you sure you want to cancel your sign up for this route?</h3>
 <div>
     <form method="post">
         <!--<dl class="row">
@@ -98,7 +98,7 @@
             <input asp-for="@Model.Route.AttendantId" class="form-control" />
             <span asp-validation-for="@Model.Route.AttendantId" class="text-danger"></span>
         </div>
-        <input type="submit" value="Sign up" class="btn btn-danger" />
+        <input type="submit" value="Cancel sign up" class="btn btn-danger" />
     </form>
     <div>
         <a asp-page="Index">Back to select routes</a>

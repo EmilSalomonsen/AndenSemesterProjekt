@@ -62,7 +62,7 @@ namespace AndenSemesterProjekt.Services
                 return _context.Routes;
             }
 
-            return _context.Routes.Where(e => e.NrOfSeats.Contains(criteria));
+            return _context.Routes.Where(e => e.NrOfSeats == criteria);
         }
 
         public Route GetRoutes(int id)
@@ -93,8 +93,34 @@ namespace AndenSemesterProjekt.Services
                 _context.SaveChanges();
             }
         }
+        public Route AddAttendantToRoute(Route route)
+        {
+            var Foundroute = _context.Routes.First(r => r.RouteId == route.RouteId);
+            Foundroute.AttendantId = route.AttendantId;
+            //routes.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _context.SaveChanges();
+            return route;
+        }
 
-      
+        public void RemoveAttendantFromRoute(Route route, int? id)
+        {
+            var Foundroute = _context.Routes.First(r => r.RouteId == route.RouteId && r.AttendantId == id);
+            Foundroute.AttendantId = null;
+            //routes.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _context.SaveChanges();
+            
+        }
+        //{
+        //    Attendant attendant = _context.Attendants.ToList().Where(a => a.AttendantId == id).FirstOrDefault();
+        //    if (attendant != null)
+        //    {
+        //        _context.Attendants.Remove(attendant);
+        //        _context.SaveChanges();
+        //    }
+        //}
+
+
+
     }
 }
 
