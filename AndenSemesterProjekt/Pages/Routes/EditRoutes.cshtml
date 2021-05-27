@@ -1,0 +1,44 @@
+﻿@page "{id:int}"
+@model AndenSemesterProjekt.Pages.Routes.EditRoutesModel
+@{
+    ViewData["Title"] = "EditRoutes";
+}
+
+<h1> Edit Routes</h1>
+<h3> Are you sure you want to edit this route?</h3>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="@Model.Routes.RouteId" />
+            <div class="form-group">
+                <label asp-for="@Model.Routes.NrOfSeats" class="control-label"></label>
+                <input asp-for="@Model.Routes.NrOfSeats" class="form-control" />
+                <span asp-validation-for="@Model.Routes.NrOfSeats" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Routes.StartAdress" class="control-label"></label>
+                <input asp-for="@Model.Routes.StartAdress" class="form-control" />
+                <span asp-validation-for="@Model.Routes.StartAdress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Routes.EndAdress" class="control-label"></label>
+                <input asp-for="@Model.Routes.EndAdress" class="form-control" />
+                <span asp-validation-for="@Model.Routes.EndAdress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Routes.Eta" class="control-label"></label>
+                <input asp-for="@Model.Routes.Eta" class="form-control" />
+                <span asp-validation-for="@Model.Routes.Eta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="index">Back to List</a>
+</div>
